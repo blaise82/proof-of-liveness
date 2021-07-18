@@ -1,38 +1,122 @@
-.App {
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #353841;
+  font-family: "Open Sans", sans-serif;
+}
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feed {
+  /* background: tomato; */
+  width: 85vw;
+  height: 98vh;
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+.camera-icon {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 60px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.try-again {
+  background-color: #25a569; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+}
+.try-div {
+  width: 100%;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.displayImage {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes spinning {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.loading-icon {
+  animation: spinning 3s linear infinite;
+  width: 80px;
+}
+.text {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 15px;
+  text-transform: lowerCase;
+}
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media screen and (min-width: 1400px) {
+  /* Styles */
+  .feed {
+    /* background: rgb(68, 205, 223); */
+    width: 70vw;
+    height: 90vh;
+    position: relative;
+  }
+  .video {
+    width: 100%;
+    height: 90vh;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
+  .results {
+    padding: 2%;
+  }
+  .feed {
+    /* background: rgb(68, 205, 223); */
+    width: 100vw;
+    height: 90vh;
+    position: inherit;
+  }
+  .video {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .camera-icon {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
